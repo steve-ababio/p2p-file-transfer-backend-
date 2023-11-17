@@ -1,7 +1,7 @@
 import "dotenv/config";
-import {Server, Socket} from "socket.io";
+import {Server} from "socket.io";
 const PORT = process.env.PORT ?? 8000;
-const ioserver = new Server(parseInt(PORT,10),{cors:{origin:["http://localhost:3000","http://192.168.1.107:3000"]}});
+const ioserver = new Server(parseInt(PORT,10),{cors:{origin:["https://p2pfiletransfer-sigma.vercel.app"]}});
 
 ioserver.use(function(socket,next){
     const userID = socket.handshake.auth.userID;
